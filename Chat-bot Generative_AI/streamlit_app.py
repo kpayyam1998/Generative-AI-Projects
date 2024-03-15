@@ -1,6 +1,5 @@
 # import google.generativeai as genai
 
-# apikey="AIzaSyADIFAXWJDLjmfC_MicaBPGF4z1AAsejnM"
 import  streamlit as st
 import google.generativeai as genai
 
