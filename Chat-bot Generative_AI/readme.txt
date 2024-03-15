@@ -1,4 +1,4 @@
-# Project steps
+#Project steps
 
 -- I have created a simple chat-bot application using Generative AI LLM models Steps that i followed here.
 
@@ -10,7 +10,7 @@
 
 -- we will get response once we pass the prompt
 
-## Deployment steps
+##Deployment steps
 
 1. Create one streamlit cloud community account
 2. link your github account to streamlit cloud community ( Note: related to any quries please visit this link. https://docs.streamlit.io/streamlit-community-cloud/deploy-your-app 
