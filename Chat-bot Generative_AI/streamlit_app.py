@@ -1,11 +1,12 @@
 # import google.generativeai as genai
 
+# apikey="AIzaSyADIFAXWJDLjmfC_MicaBPGF4z1AAsejnM"
 import  streamlit as st
 import google.generativeai as genai
 
 
 
-genai.configure(api_key='A---------Your Key-------------M')
+genai.configure(api_key='A-----------Your Key-----------M')
 
 model = genai.GenerativeModel('gemini-pro')
 
@@ -14,33 +15,22 @@ safety_settings = [
         "category": "HARM_CATEGORY_DANGEROUS",
         "threshold": "BLOCK_NONE",
     },
-    {
-        "category": "HARM_CATEGORY_HARASSMENT",
-        "threshold": "BLOCK_NONE",
-    },
-    {
-        "category": "HARM_CATEGORY_HATE_SPEECH",
-        "threshold": "BLOCK_NONE",
-    },
-    {
-        "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-        "threshold": "BLOCK_NONE",
-    },
-    {
-        "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-        "threshold": "BLOCK_NONE",
-    },
-]
+   
+] # i got the security error thats why i have included this json code
 
-st.title("Simple Chat-bot")
 
-prompt=st.text_input(label="Input")
-click=st.button("Click Explain")
-if click:
-    while prompt!="exit" or prompt!="bye":
-        response = model.generate_content(prompt,safety_settings=safety_settings)
-        st.write(response.text)
-else:
-    st.write("I can guide you,please write something...")
+def generate_content(prompt):
+    if prompt in("exit","bye"):# ((prompt!="exit") or (prompt!="bye")):
+        return "Thanks for visiting "
+    else:
+        response = model.generate_content(prompt,safety_settings=safety_settings) # it will generate content
+    return response.text
 
-#print(response.text)
+st.title("Generative AI Chat-bot")
+
+prompt=st.text_input(label="Input") # Input
+
+click=st.button("Click to Explain") # once the user click this button it will call the generate content button
+if click: # st.button("Click to Explain")
+    st.write(generate_content(prompt)) 
+    
