@@ -3,7 +3,7 @@ Project steps
 
 -- I have created a simple chat-bot application using Generative AI LLM models Steps that i followed here.
 
--- Frist we need to create one API-KEY in google ai platform.(https://console.cloud.google.com/apis/credentials?authuser=4&hl=en&project=gen-lang-client-0155341242)
+-- Frist we need to create one API-KEY in google ai platform.(https://console.cloud.google.com/apis)
 
 -- Make sure to install generativeai latest library. pip install google-generativeai
 
